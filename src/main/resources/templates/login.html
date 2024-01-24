@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<style>
+    #one{
+        color:blue;
+        background-color: aqua;
+    }
+    body{
+  background-image: url("https://t3.ftcdn.net/jpg/01/14/40/14/360_F_114401420_yN5sJ20f0wk8xuCLn6qBGS9gjEwvSZNG.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  
+}
+    
+    
+</style>
+</head>
+<body style="background-color:aqua">
+<section>
+<div class="container" id="one">
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="card">
+<div class="card-header text-center fs-4">
+Login Page</div>
+<div th:if="${param.error}" class="alert alert-danger">
+Invalid username & Password</div>
+<div th:if="${param.logout}" class="alert alert-success">
+Logout Successfully</div>
+
+<div class="card-body">
+<form th:action="login" method="post">
+<div class="mb-3">
+<label>Enter Email</label>
+<input type="text" name="username" class="form-control">
+</div>
+<div class="mb-3">
+<label> Enter Password</label>
+<input type="text" name="password" class="form-control">
+</div>
+
+<button class="btn btn-primary col-md-22">Login</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>
